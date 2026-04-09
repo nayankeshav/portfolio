@@ -15,6 +15,7 @@
 	        color: #222;
 	        text-align: center; 
 	    }
+
 	    header, section { margin-bottom: 60px; }  
 	    h1 { font-size: 28px; margin-bottom: 15px; }	    
 	    h2 { 
@@ -45,26 +46,50 @@
 	    a { color: #007bff; text-decoration: none; border-bottom: 1px solid #eee; padding-bottom: 2px; }
 	    a:hover { border-bottom: 1px solid #007bff; color: #0056b3; }
 
+	section {
+	    margin-bottom: 60px;
+	    padding: 30px; /* Added padding so content doesn't touch the glass edges */
+	    border-radius: 20px;
+	    
+	    /* 1. The Glass Effect */
+	    background: rgba(255, 255, 255, 0.4); 
+	    backdrop-filter: blur(12px);
+	    -webkit-backdrop-filter: blur(12px);
+	    
+	    /* 2. The Specular Highlight (White Border) */
+	    border: 1px solid rgba(255, 255, 255, 0.5);
+	    
+	    /* 3. Smooth Elevation Shadow */
+	    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+	}
+
 	    @media (prefers-color-scheme: dark) {
 	        body { background: #000; color: #ccc; }
 	        h1 { color: #fff; }
 	        a { color: #58a6ff; border-bottom-color: #333; }
 	        .profile-img { border-color: #333; }
+	        section {
+	                background: rgba(255, 255, 255, 0.05); /* Darker glass for dark mode */
+	                border: 1px solid rgba(255, 255, 255, 0.1);
+	                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+	            }
 	    }
 	</style>
 </head>
 <body>
 
     <header>
+    <section>
         <h1>Nayan Keshav</h1>
         <img src="profile.png" alt="Nayan Keshav" class="profile-img">
         <p>B.Tech First Year ECE Student @ College Of Engineering Trikaripur, Cheemeni. I'm a curious guy flabbergasted by the world of technologies.
 		   I spend my time learning new things, coding, ESP32, any curious thing i can find. I do love travelling and meeting curious people ! <br>	
 		   <a href="https://github.com/nayankeshav">GitHub</a> | <a href="https://www.linkedin.com/in/nayan-keshav/">Linkedin</a>
         </p>
+        </section>
     </header>
 
-    <section>
+    <section >
         <h2>Projects</h2>
         <b>HolyTrail</b>
         <p>Still under progress project. </p>
